@@ -100,11 +100,14 @@
     }
 
    #messages {
-      flex: 1;
-      overflow-y: auto;
-      padding: 1rem;
-      margin-bottom: 80px; /* Space for inputContainer */
-    }
+  display: flex;
+  flex-direction: column; /* Top to bottom order */
+  overflow-y: auto;
+  height: 100%;
+  padding: 10px;
+  justify-content: flex-end; /* Push messages to the bottom initially */
+}
+
 
     #inputContainer {
       display: flex;
@@ -676,6 +679,18 @@
                 return;
             }
 
+            function appendMessage(text, isOwnMessage = false) {
+  const messages = document.getElementById('messages');
+  const msgDiv = document.createElement('div');
+  msgDiv.textContent = text;
+  msgDiv.className = isOwnMessage ? 'my-message' : 'other-message';
+  messages.appendChild(msgDiv);
+
+  // Scroll to bottom
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
             const messageText = document.createElement('span');
             messageText.textContent = ` ${message}`;
 
@@ -794,6 +809,7 @@
 
 
 </html>
+
 
 
 
