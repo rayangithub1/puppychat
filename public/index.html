@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omiggle - Chat Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Baloo 2', cursive;
+      background: #fff7ee;
+    }
+
+    .hero {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-side {
+      width: 50%;
+      background: #fff7ee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 30px;
+    }
+
+    .left-side img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .left-bottom-text {
+      position: absolute;
+      bottom: 20px;
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+      width: 100%;
+    }
+
+    .right-side {
+      width: 50%;
+      background: #fff7ee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .right-side h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .right-side h2 {
+      font-size: 40px;
+      margin-bottom: 30px;
+      color: #333;
+      line-height: 40px;
+    }
+
+    .gender-select {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .gender-select button {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    .gender-select button:hover {
+      background-color: #eee;
+    }
+
+    .gender-select button:focus {
+  outline: none;
+}
+
+.gender-select button.selected {
+  background-color: #ffd580;
+  border-color: #ffa500;
+  color: #000;
+}
+
+
+
+    .terms {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+      align-items: flex-start;
+    }
+
+    .terms input {
+      margin-right: 10px;
+    }
+
+    .chat-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .chat-buttons a button {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      color: black;
+      background-color: #ffbb33;
+      border: 1px solid #797979;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .chat-buttons a:last-child button {
+      color: white;
+      background: black;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .left-side {
+    display: none;
+  }
+
+  .right-side {
+    width: 100%;
+    height: 100vh;
+  }
+}
+.right-side-img {
+  width: 350px;
+  max-width: 100%;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 768px) {
+  .right-side-img {
+    max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="left-side">
+      <img src="12538.gif" alt="Dancing Puppy GIF" />
+    </div>
+
+    <div class="right-side">
+      <img class="right-side-img" src="logo.gif" alt="Dancing Puppy GIF" />
+      <h2>Connect with random strangers instantly</h2>
+
+      <div class="gender-select">
+        <button>I'm a Male</button>
+        <button>I'm a Female</button>
+      </div>
+
+      <label class="terms">
+  <input type="checkbox" /> I confirm that I am at least 18 years of age, and I fully understand that this platform is intended solely for adult users. I acknowledge that any misuse or violation of the platform’s guidelines may result in a permanent ban.
+</label>
+      <label class="terms">
+  <input type="checkbox" /> I have carefully read and fully agree to abide by all the Terms and Conditions outlined by this platform, including any future updates, privacy practices, and community standards that ensure a safe and respectful environment for all users.
+</label>
+
+
+      <div class="chat-buttons">
+        <a href="/video.html"><button>Start Video Chat</button></a>
+        <a href="/text.html"><button>Start Text Chat</button></a>
+      </div>
+    </div>
+    <div class="left-bottom-text">By continuing, you agree to our Terms & Privacy Policy.</div>
+  </div>
+  <script>
+  const genderButtons = document.querySelectorAll('.gender-select button');
+  genderButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      genderButtons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+    });
+  });
+</script>
+
+</body>
+</html>
